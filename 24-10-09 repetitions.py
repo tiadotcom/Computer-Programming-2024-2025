@@ -26,8 +26,5 @@ def circle_720():
 bob = turtle.Turtle()
 circle_360()
 
-
-
-
 turtle.done()
 
