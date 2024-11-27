@@ -8,6 +8,10 @@
 # - ackermann_memo3(): with a memo being a dictionary using a tuple
 #                       of the parameters as key
 
+import sys
+sys.setrecursionlimit(10**6)
+memo = {}
+
 def ackermann(m, n):
     """
     Computes the Ackermann function:
@@ -66,7 +70,8 @@ def ackermann_memo2(m, n):
     function parameters (computed with key_str()) as key:
     A(m, n) --->  memo[key_str(m, n)]
     """
-
+    key = key_str(m, n) 
+    
     if key in memo:
         return memo[key]
 
@@ -104,12 +109,13 @@ def ackermann_memo3(m, n):
 
 
 ######### MAIN ########
-
+memo = {}
 m = 3
 n = 5
 print('A(', m, ',', n, '): ', ackermann(m, n))
 print('A(', m, ',', n, '): ', ackermann_memo3(m, n))
 
+memo = {}
 m = 3
 n = 8 # for 9 exceed recursion
 #print('A(', m, ',', n, '): ', ackermann(m, n))
